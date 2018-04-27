@@ -1,0 +1,87 @@
+@import "../variables.scss";
+
+.main-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  &--open .main-nav__list {
+    visibility: visible;
+  }
+
+  &__list {
+    position: absolute;
+    top: 72px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $main-bg;
+    visibility: hidden;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+
+    &--active .main-nav__link {
+      color: $link-active-color;
+
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 10px;
+
+    &:hover {
+      background-color: lighten($main-bg, 25%);
+    }
+  }
+}
+
+//@media (min-width: $tablet-width) {
+//}
+//
+//@media (min-width: $desktop-width) {
+//}
+@media (min-width: $tablet-width) {
+  .main-nav {
+    //
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__list {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-grow: 1;
+      visibility: visible;
+    }
+
+    &__item {
+      width: auto;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
