@@ -13,8 +13,8 @@ burgerBtn.addEventListener("click", function(evt) {
 });
 
 //Justified-Gallery
-if ($(".gallery__list").length > 0){
-    $(".gallery__list").justifiedGallery({
+if ($(".gallery__list--tattoos").length > 0){
+    $(".gallery__list--tattoos").justifiedGallery({
     lastRow : "nojustify",
     rowHeight : 140,
     rel : 'gallery1',
@@ -28,4 +28,21 @@ if ($(".gallery__list").length > 0){
         current : ""
     });
 });
+}
+
+if ($(".gallery__list--drawings").length > 0){
+    $(".gallery__list--drawings").justifiedGallery({
+        lastRow : "nojustify",
+        rowHeight : 140,
+        rel : 'gallery2',
+        margins : 2
+    }).on("jg.complete", function () {
+        $(this).find("a").colorbox({
+            maxWidth : "80%",
+            maxHeight : "80%",
+            opacity : 0.8,
+            transition : "elastic",
+            current : ""
+        });
+    });
 }

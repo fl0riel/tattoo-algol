@@ -21,11 +21,11 @@ gulp.task("style", function() {
 });
 
 gulp.task("svg", function() {
-  return gulp.src("img/*.svg")
+  return gulp.src("img/sprite/*.svg")
     .pipe(rsp.remove({
-      properties: [rsp.PROPS_FILL, 'class', 'data-name', 'opacity', 'id']
+      properties: [rsp.PROPS_FILL, 'class', 'data-name', 'opacity', 'width', 'height', 'id']
     }))
-    .pipe(gulp.dest("img"));
+    .pipe(gulp.dest("img/sprite"));
 });
 
 gulp.task("svg2", function () {
@@ -44,7 +44,6 @@ gulp.task("serve", ["style"], function() {
     cors: true,
     ui: false
   });
-
 });
 
 gulp.watch("sass/**/*.{scss,sass}", ["style"]);
